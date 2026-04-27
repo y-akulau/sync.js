@@ -1,0 +1,45 @@
+{
+    "name": "sync",
+    "version": "0.1.0",
+    "description": "Synchronization primitives for async code",
+    "main": "dist/index.js",
+    "exports": {
+        ".": "./dist/index.js"
+    },
+    "scripts": {
+        "clear": "npm run clear:packages && npm run clear:build",
+        "clear:packages": "rimraf node_modules",
+        "clear:build": "rimraf dist build",
+        "check": "npm run check:format && npm run check:cspell && npm run check:ts && npm run check:lint",
+        "check:format": "npx @biomejs/biome format",
+        "check:cspell": "cspell .",
+        "check:ts": "tsc --noEmit",
+        "check:lint": "npx @biomejs/biome check",
+        "format": "npx @biomejs/biome format --write",
+        "lint": "npx @biomejs/biome check --write",
+        "build": "tsc",
+        "test": "vitest"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/y-akulau/sync.js.git"
+    },
+    "keywords": [
+        "async",
+        "concurrency",
+        "synchronization"
+    ],
+    "author": "Yauheni Akulau",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/y-akulau/sync.js/issues"
+    },
+    "homepage": "https://github.com/y-akulau/sync.js#readme",
+    "devDependencies": {
+        "@biomejs/biome": "2.4.13",
+        "cspell": "9.8.0",
+        "rimraf": "6.1.3",
+        "typescript": "6.0.3",
+        "vitest": "4.1.5"
+    }
+}
