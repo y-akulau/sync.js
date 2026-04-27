@@ -1,6 +1,1 @@
-export function greet(
-    name: string,
-    write: (text: string) => void = console.log,
-): void {
-    write(`Hello, ${name}!`);
-}
+export { WaitGroup } from "./wait-group";
